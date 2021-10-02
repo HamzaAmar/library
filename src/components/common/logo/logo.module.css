@@ -1,0 +1,16 @@
+.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  /* background: rgb(255, 189, 177);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color-light) 0%,
+    var(--secondary-color-main) 15%,
+    var(--secondary-color-main) 85%,
+    var(--primary-color-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  text-shadow: 0 0.115rem 0.5rem rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}

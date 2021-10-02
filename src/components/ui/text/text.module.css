@@ -1,0 +1,44 @@
+.dark {
+  color: var(--text-color);
+}
+
+.main {
+  color: var(--text-color-main);
+}
+
+.light {
+  color: var(--text-color-light);
+}
+
+.success {
+}
+
+.danger {
+}
+
+.warning {
+}
+
+.xs {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.sm {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.md {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.lg {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.xl {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}

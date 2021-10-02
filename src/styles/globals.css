@@ -1,0 +1,64 @@
+:root {
+  --primary-color-light: #ffbdb1;
+  --primary-color-main: #ffad9d;
+  --primary-color-dark: #fc9681;
+
+  --secondary-color-light: #8a6c86;
+  --secondary-color-main: #452473;
+  --secondary-color-dark: #32125e;
+
+  --warning-color: rgb(250, 170, 78);
+  --danger-color: rgb(226, 67, 67);
+  --success-color: rgb(78, 241, 141);
+
+  --text-color-light: #535353;
+  --text-color-main: #333;
+  --text-color: #0f0625;
+
+  --primary-background-light: #ffffff;
+  --primary-background-main: #f1eef6;
+  --primary-background-dark: #b5b7c8;
+
+  --border-radius: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+div,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.textCenter {
+  text-align: center;
+}

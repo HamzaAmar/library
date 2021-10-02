@@ -1,0 +1,27 @@
+.inputContainer {
+  position: relative;
+  display: block;
+}
+
+.input {
+  padding: 0.5rem 1.5rem;
+  border: 0;
+}
+
+.fluid {
+  width: 100%;
+}
+
+.leftIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.leftIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

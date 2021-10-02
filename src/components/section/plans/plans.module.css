@@ -1,0 +1,28 @@
+.container {
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.heading {
+  font-weight: 700;
+}
+.plan {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 3rem;
+  border-radius: var(--border-radius);
+}
+.list {
+  margin-bottom: 2rem;
+}
+
+.item {
+  line-height: 2;
+  font-size: 0.9rem;
+}
+.price {
+  margin-right: 0.25rem;
+  font-weight: 500;
+}

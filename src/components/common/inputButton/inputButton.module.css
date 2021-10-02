@@ -1,0 +1,62 @@
+.inputContainer {
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  padding: 0.5rem;
+}
+
+.form {
+  background-color: white;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  border-radius: 100rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.inputWrapper {
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.search {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--primary-background-main);
+  padding: 1rem 0.5rem;
+  padding-top: 5rem;
+  background-color: #eee;
+}
+
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.listItem:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.listItem:hover {
+  background-color: var(--primary-background-dark);
+}
+
+.avatar {
+}
+
+.listItemTextContent {
+  padding: 0.5rem;
+  padding-left: 1rem;
+}

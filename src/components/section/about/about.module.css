@@ -1,0 +1,59 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  font-size: 0.85rem;
+  height: 75vh;
+  position: relative;
+}
+
+.leftSection {
+  background-color: var(--primary-background-main);
+  grid-column: 1 / 5;
+  padding: 0 4em;
+  padding-left: 10vw;
+}
+
+.bStyles {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color-light);
+  transform: rotate(-35deg);
+  box-shadow: 0 4px 0 2px white;
+  margin-right: 5px;
+}
+
+.middleSection {
+  grid-column: 4 / 6;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rightSection {
+  background-color: var(--secondary-color-main);
+  grid-column: 5 / 8;
+  padding: 0 8em;
+  color: white;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.rightSection svg {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,102 @@
+.toggle {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 90%;
+  margin: 0.3rem;
+  width: fit-content;
+  padding: 0.1rem 0.6rem;
+  display: grid;
+  place-items: center;
+  text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5);
+}
+
+.primary {
+  color: var(--primary-main);
+}
+.danger {
+  color: var(--danger-main);
+}
+.success {
+  color: var(--success-main);
+}
+.warning {
+  color: var(--warning-main);
+}
+.secondary {
+  color: var(--secondary-main);
+}
+
+.toggle:focus-within {
+  outline: 1px dashed;
+}
+
+.toggle:focus-within .toggleLabel {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.toggleControl {
+  display: block;
+  width: 2.6em;
+  height: 1.3em;
+  border-radius: 0.4em;
+  border: 0.12em solid currentColor;
+  position: relative;
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5);
+}
+
+.toggleControl::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 1.18em;
+  height: 100%;
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: transform 0.2s;
+  background: currentColor;
+}
+
+.input:checked + .toggleControl::before {
+  transform: translateX(100%);
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+.input:checked + .toggleControl {
+  background: currentColor;
+}
+
+.toggleControl svg {
+  width: 90%;
+  height: 90%;
+  transform: scale(0);
+  transition: 0.2s transform ease-in-out;
+}
+
+/* .toggleControl::before {
+    content: '';
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    box-shadow: inset 0.5em 0.5em currentColor;
+    position: absolute;
+    transform: scale(0) translateY(-100%);
+    transition: 0.2s transform ease-in-out;
+  } */
+
+.input:checked + .toggleControl svg {
+  transform: scale(1);
+}
+
+.toggleLabel {
+  color: var(--background-secondary-main);
+}
+
+.row {
+  display: inline-grid;
+}

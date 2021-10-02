@@ -1,0 +1,59 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  font-size: 0.85rem;
+  height: 6rem;
+}
+
+/* Left Side Content section css */
+
+.leftHeader {
+  background-color: var(--primary-background-main);
+  grid-column: 1 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 4em;
+  padding-left: 10vw;
+}
+
+.list {
+  display: flex;
+  justify-content: flex-start;
+  flex: 2 0;
+}
+.item:not(:first-child) {
+  margin-left: 2em;
+}
+.item:last-child {
+  margin-left: auto;
+}
+/* Right Side Content section css */
+
+.rightHeader {
+  background-color: var(--secondary-color-main);
+  grid-column: 5 / 8;
+  padding: 0 4em;
+  padding-right: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.badge {
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--primary-color-light);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  font-size: 0.7rem;
+  color: black;
+  padding: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -20%);
+}

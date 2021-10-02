@@ -1,0 +1,11 @@
+.booksContainer {
+  width: 25%;
+  height: 8rem;
+  transform: translateY(-50%);
+  margin-left: 5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-background-main);
+  padding: 0.5rem;
+  box-shadow: 0 0 0 5px var(--primary-background-light);
+  padding-right: 2rem;
+}

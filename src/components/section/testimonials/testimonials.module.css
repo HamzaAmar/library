@@ -1,0 +1,67 @@
+.container {
+  padding: 4rem 10vw;
+  background-color: var(--primary-background-main);
+  margin-top: 2rem;
+  position: relative;
+  padding-bottom: 9rem;
+  margin-bottom: 7rem;
+}
+.headingContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading {
+  font-weight: 700;
+  font-size: 3.25rem;
+  line-height: 1.7;
+}
+
+.testimonialsList {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-50%);
+  width: calc(100% - 10vw);
+}
+
+.testimonial {
+  background-color: var(--primary-background-light);
+  padding: 2.25rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.imageContainer {
+  border-radius: 100%;
+  width: 2.75rem;
+  height: 2.75rem;
+  overflow: hidden;
+  border: 3px solid orange;
+  margin-right: 1rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+  color: var(--text-color-light);
+}
+
+.userInfoContainer {
+  font-size: 0.7rem;
+}

@@ -1,0 +1,38 @@
+.book {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: visible;
+}
+
+.book:nth-child(odd) {
+  box-shadow: inset 0 0 0 5px var(--primary-color-light);
+}
+
+.book:nth-child(even) {
+  box-shadow: inset 0 0 0 5px var(--secondary-color-main);
+}
+.imageContainer {
+  height: 100%;
+  padding: 5px;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+}
+
+.rating {
+  position: absolute;
+  top: 1rem;
+  z-index: 5;
+  right: 0;
+  background-color: var(--primary-background-light);
+  padding: 0.25rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  transform: translateX(40%);
+}

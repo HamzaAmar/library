@@ -1,0 +1,97 @@
+.avatar {
+  --small-size: 2rem;
+  --medium-size: 2.3rem;
+  --large-size: 4rem;
+
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-width: --small-size;
+  max-width: 100%;
+  background: var(--p-surface-neutral);
+  color: var(--p-icon-subdued);
+  border-radius: --large-size / 2;
+  user-select: none;
+}
+.avatar::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.small {
+  width: var(--small-size);
+}
+
+.medium {
+  width: var(--medium-size);
+}
+
+.large {
+  width: var(--large-size);
+}
+
+.styleOne {
+  color: var(--p-decorative-one-text);
+  background: var(--p-decorative-one-surface);
+}
+
+.styleTwo {
+  color: var(--p-decorative-two-text);
+  background: var(--p-decorative-two-surface);
+}
+
+.styleThree {
+  color: var(--p-decorative-three-text);
+  background: var(--p-decorative-three-surface);
+}
+
+.styleFour {
+  color: var(--p-decorative-four-text);
+  background: var(--p-decorative-four-surface);
+}
+
+.styleFive {
+  color: var(--p-decorative-five-text);
+  background: var(--p-decorative-five-surface);
+}
+
+.hasImage {
+  background: transparent;
+}
+
+.Image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--p-background);
+  border-radius: --large-size / 2;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.Initials {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* @media (forced-colors: active) {
+  @include high-contrast-border;
+} */
