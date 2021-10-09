@@ -39,10 +39,10 @@ const login = () => {
         <Separator title="Login with Email" />
 
         <form>
-          <FormController label="Email" id="email">
+          <FormController required label="Email" id="email">
             <Input size="fluid" name="email" placeholder="Enter Your Email" />
           </FormController>
-          <FormController label="Password" id="password">
+          <FormController required label="Password" id="password">
             <Input name="Password" placeholder="Enter Your Password" />
           </FormController>
 

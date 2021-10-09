@@ -1,4 +1,4 @@
-import { Button, Heading, Input } from '@components/ui';
+import { Button, Heading, Input, Text } from '@components/ui';
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './inputButton.module.css';
 import cn from 'classnames';
@@ -41,19 +41,20 @@ const InputButton = (props: any) => {
     setIsSearchVisible(false);
   };
 
-  const SearchItem = () => {
+  const SearchItem = (props) => {
+    const { img, name, description } = props;
+
+    console.log(data);
     return (
       <li className={styles.listItem}>
         <div className={styles.avatar}>
-          <img src="https://picsum.photos/id/210/50/50" />
+          <img src={img.src} />
         </div>
         <div className={styles.listItemTextContent}>
           <Heading as="h2" size="xs">
-            The best stuff ever
+            {name}
           </Heading>
-          <Heading as="h3" size="xxs">
-            hello
-          </Heading>
+          <p>{description}</p>
         </div>
       </li>
     );
@@ -78,17 +79,16 @@ const InputButton = (props: any) => {
           {buttonTitle}
         </Button>
       </form>
+
       <ul
         className={cn(styles.search, {
           [styles.visible]: isSearchVisible === true,
           [styles.invisible]: isSearchVisible === false
         })}
       >
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
+        {data?.books.map(({ id, ...rest }) => {
+          return <SearchItem key={id} {...rest} />;
+        })}
       </ul>
     </div>
   );

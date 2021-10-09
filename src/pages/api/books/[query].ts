@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import book from '@components/section/book';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import BookProps from 'src/types/books';
 
@@ -203,7 +204,32 @@ const books: BookProps[] = [
   }
 ];
 
+function isQuerySearchIncludesInText(field: any, query: string): boolean {
+  let isExist;
+  if (Array.isArray(field)) {
+    isExist = field.includes(query);
+  } else {
+    isExist = field.toLowerCase().split(' ').includes(query);
+  }
+  return isExist;
+}
+
 export default function Books(req: NextApiRequest, res: NextApiResponse<Data>) {
-  console.log(req.query);
-  return res.status(200).json({ books });
+  let { query } = req.query;
+
+  let lowerQuery = (query as string).toLowerCase();
+  const filtredBook = books.filter(function (book) {
+    const { name, description, authors } = book;
+    console.log(
+      isQuerySearchIncludesInText(name, lowerQuery) ||
+        isQuerySearchIncludesInText(description, lowerQuery) ||
+        isQuerySearchIncludesInText(authors, lowerQuery)
+    );
+    return (
+      isQuerySearchIncludesInText(name, lowerQuery) ||
+      isQuerySearchIncludesInText(description, lowerQuery) ||
+      isQuerySearchIncludesInText(authors, lowerQuery)
+    );
+  });
+  return res.status(200).json({ books: filtredBook });
 }
