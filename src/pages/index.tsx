@@ -15,7 +15,6 @@ import fetcher from 'src/utils/fetcher';
 import useSWR from 'swr';
 
 const Home: NextPage = ({ books }) => {
-  console.log(books);
   return (
     <Layout>
       <div>

@@ -1,9 +1,17 @@
 import React from 'react';
 import { InputProps } from './input.type';
 import styles from './input.module.css';
+import { Cross } from '@components/icons';
 
 const input = (props: InputProps) => {
-  const { size = 'fluid', leftIcon, rightIcon, ...rest } = props;
+  const {
+    size = 'fluid',
+    leftIcon,
+    rightIcon,
+    touched,
+    error,
+    ...rest
+  } = props;
 
   const leftIconBlock = leftIcon ? (
     <span className={styles.leftIcon}>{leftIcon}</span>
@@ -15,11 +23,26 @@ const input = (props: InputProps) => {
 
   const inputClassNames = `${styles.input} ${styles[size]}`;
 
+  const messageContent =
+    touched && error ? (
+      <div className={styles.messageContainer}>
+        <Cross width="15" />
+        <small className={styles.message}> {error} </small>
+      </div>
+    ) : null;
+
   return (
-    <div className={styles.inputContainer}>
-      {leftIconBlock}
-      <input className={inputClassNames} {...rest} />
-      {rightIconBlock}
+    <div>
+      <div className={styles.inputContainer}>
+        {leftIconBlock}
+        <input
+          className={inputClassNames}
+          data-error={touched && !!error}
+          {...rest}
+        />
+        {rightIconBlock}
+      </div>
+      {messageContent}
     </div>
   );
 };

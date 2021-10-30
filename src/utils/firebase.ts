@@ -8,7 +8,11 @@ import {
   sendPasswordResetEmail,
   signOut,
   onAuthStateChanged,
-  UserCredential
+  UserCredential,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult
 } from 'firebase/auth';
 import 'firebase/analytics';
 
@@ -28,6 +32,7 @@ const config = {
 
 const app = initializeApp(config);
 const auth = getAuth();
+const googleProvider = new GoogleAuthProvider();
 
 export type UserType = UserCredential;
 
@@ -39,5 +44,10 @@ export default {
   sendPasswordResetEmail,
   confirmPasswordReset,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  googleProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider
 };

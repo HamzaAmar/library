@@ -44,7 +44,6 @@ const InputButton = (props: any) => {
   const SearchItem = (props) => {
     const { img, name, description } = props;
 
-    console.log(data);
     return (
       <li className={styles.listItem}>
         <div className={styles.avatar}>

@@ -6,8 +6,19 @@
 .input {
   padding: 0.5rem 1.5rem;
   border: 0;
+  outline: none;
+}
+.input:focus {
+  box-shadow: 0 0 0 2px;
+}
+.input[data-error='true'] {
+  border: var(--danger-color) 1px solid;
+  color: var(--danger-color);
 }
 
+.input[data-error='true']::placeholder {
+  color: rgba(139, 0, 0, 0.685);
+}
 .fluid {
   width: 100%;
 }
@@ -24,4 +35,14 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+.messageContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--danger-color);
+  padding-top: 0.175rem;
+}
+.message {
+  text-transform: uppercase;
 }

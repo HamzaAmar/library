@@ -16,7 +16,6 @@ const about = () => {
         <InputButtonSelect
           name="search"
           placeholder="search book , authors , categories"
-          full
           buttonTitle="Search"
         />
       </div>

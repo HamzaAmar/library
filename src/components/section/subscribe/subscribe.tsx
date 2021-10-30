@@ -11,7 +11,6 @@ const subscribe = () => {
       <InputButton
         name="subscribe"
         placeholder="Type Your Email Here"
-        full
         buttonTitle="Subscribe"
       />
     </div>

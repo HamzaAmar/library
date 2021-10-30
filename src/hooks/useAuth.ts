@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import firebase, { UserType } from '@utils/firebase';
+import { UserCredential } from '@firebase/auth';
 
 const {
   createUserWithEmailAndPassword,
@@ -8,7 +9,10 @@ const {
   sendPasswordResetEmail,
   confirmPasswordReset,
   onAuthStateChanged,
-  signOut
+  signOut,
+  getRedirectResult,
+  GoogleAuthProvider,
+  signInWithRedirect
 } = firebase;
 
 const AuthContext = createContext(null);
@@ -36,16 +40,60 @@ interface CustomResponse extends Response {
 export default function useProvideAuth() {
   const [user, setUser] = useState<UserType | boolean | null>(false);
   const signin = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password)
-      .then((response: any) => {
+    return signInWithEmailAndPassword(auth, email, password).then(
+      (response: any) => {
         setUser(response.user);
         return response.user;
+      }
+    );
+  };
+  const signinWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
+    return getRedirectResult(auth)
+      .then((result: UserCredential | null) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential?.accessToken;
+
+        // The signed-in user info.
+        const user = result?.user;
+        console.log(user);
       })
-      .catch(function (err) {
-        console.error(err);
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
       });
   };
-  const signup = (name: string, email: string, password: string) => {
+
+  const signinWithFacebook = (email: string, password: string) => {
+    return signInWithEmailAndPassword(auth, email, password).then(
+      (response: any) => {
+        setUser(response.user);
+        return response.user;
+      }
+    );
+  };
+  const signup = (email: string, password: string) => {
+    return createUserWithEmailAndPassword(auth, email, password).then(
+      (response: any) => {
+        setUser(response.user);
+        return response.user;
+      }
+    );
+  };
+  const signupWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
+  };
+
+  const signupWithFacebook = (email: string, password: string) => {
     return createUserWithEmailAndPassword(auth, email, password).then(
       (response: any) => {
         setUser(response.user);
@@ -90,6 +138,10 @@ export default function useProvideAuth() {
     signup,
     signout,
     sendPasswordReset,
-    confirmPassword
+    confirmPassword,
+    signinWithGoogle,
+    signinWithFacebook,
+    signupWithGoogle,
+    signupWithFacebook
   };
 }

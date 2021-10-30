@@ -29,7 +29,7 @@ const smartPhone = () => {
             y="0"
             width="100%"
             height="100%"
-            clip-path="url(#shape)"
+            clipPath="url(#shape)"
             xlinkHref="https://source.unsplash.com/5PVXkqt2s9k/500x500"
             preserveAspectRatio="none"
           ></image>

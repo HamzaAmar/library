@@ -1,37 +1,42 @@
 import { Modal } from '@components/common';
 import { ForgetPassword, Login, Register } from '@components/section';
-import useUI, { ModalView } from '@hooks/useUi';
+import { useUI } from '@components/ui';
 import React, { FC } from 'react';
 import { Footer, Header } from '..';
 import { LayoutProps } from './layout.type';
+import styles from './layout.module.css';
 
-const ModalUI: FC<{
-  modalView: ModalView;
-  closeModal(): any;
-  isModalOpen: boolean;
-}> = ({ modalView, closeModal, isModalOpen }) => {
-  return isModalOpen ? (
+const ModalUI = () => {
+  const { closeModal, displayModal, modalView } = useUI();
+
+  return displayModal ? (
     <Modal onClose={closeModal}>
-      {modalView === 'LOGIN_PAGE' && <Login />}
-      {modalView === 'REGISTER_PAGE' && <Register />}
-      {modalView === 'FORGET_PASSWORD_PAGE' && <ForgetPassword />}
+      {modalView === 'LOGIN_VIEW' && <Login />}
+      {modalView === 'SIGNUP_VIEW' && <Register />}
+      {modalView === 'FORGOT_VIEW' && <ForgetPassword />}
+    </Modal>
+  ) : null;
+};
+
+const SideBarUI = () => {
+  const { closeSidebar, displaySidebar, sidebarView } = useUI();
+
+  return displaySidebar ? (
+    <Modal onClose={closeSidebar}>
+      {sidebarView === 'LOGIN_VIEW' && <Login />}
     </Modal>
   ) : null;
 };
 
 const layout = ({ children }: LayoutProps) => {
-  const { closeModal, isModalOpen, openModal, modalView } = useUI();
   return (
-    <>
-      <Header openModal={openModal} closeModal={closeModal} />
+    <div className={styles.container}>
+      <Header />
       <main>{children}</main>
       <Footer />
-      <ModalUI
-        modalView={modalView}
-        closeModal={closeModal}
-        isModalOpen={isModalOpen}
-      />
-    </>
+      <ModalUI />
+      <SideBarUI />
+    </div>
   );
 };
 

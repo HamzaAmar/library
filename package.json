@@ -15,13 +15,16 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "classnames": "^2.3.1",
     "firebase": "^9.1.1",
+    "formik": "^2.2.9",
     "keen-slider": "^5.5.1",
     "lodash.debounce": "^4.0.8",
+    "mongoose": "^6.0.11",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "^1.0.1",
-    "tabbable": "^5.2.1"
+    "tabbable": "^5.2.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@shopify/eslint-plugin": "^40.4.0",
